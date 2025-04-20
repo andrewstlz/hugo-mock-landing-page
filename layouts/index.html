@@ -1,71 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ .Site.Title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="{{ "css/bootstrap.min.css" | relURL }}" rel="stylesheet">
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2rem;
-    }
-    h1, h2 {
-      font-weight: 600;
-    }
-    .section {
-      margin-top: 4rem;
-      margin-bottom: 4rem;
-    }
-    .feature-icon {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body>
+{{ define "main" }}
 
-  <section class="text-center">
-    <img src="{{ "images/logo.svg" | relURL }}" width="150" height="150" alt="Logo">
-    <h1 class="display-4">{{ .Site.Title }}</h1>
-    <p class="lead">{{ .Site.Params.description }}</p>
-    <a class="btn btn-primary btn-lg" href="https://github.com/andrewstlz/hugo-mock-landing-page" role="button">View Source</a>
-    <p class="text-muted mt-2">MIT Licensed</p>
-  </section>
-
-  <section class="section container">
-    <div class="row text-center">
-      <div class="col-lg-4">
-        <img src="{{ "images/timed-memory-recall.png" | relURL }}" class="feature-icon" alt="Timed Memory Recall">
-        <h2>Timed Memory Recall</h2>
-        <p>Take timed memory tests to improve recall speed under pressure. Practice memory retrieval to simulate exam conditions.</p>
-      </div>
-      <div class="col-lg-4">
-        <h2>Auto Sync with Schedule</h2>
-        <p>Sync your memory training practices with your Google Calendar so you will never forget to exercise your brain.</p>
-      </div>
-      <div class="col-lg-4">
-        <h2>Leaderboard</h2>
-        <p>Compete with friends on leaderboards to keep yourself motivated.</p>
-      </div>
+<section class="section bd-masthead">
+  <div class="container-xxl">
+    <div class="col-md-8 mx-auto text-center my-5">
+      <img class="d-block mx-auto mb-3" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Logo">
+      <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
+      <p class="lead mb-4">{{ .Site.Params.description }}</p>
+      <a class="btn btn-bd-primary btn-lg px-4 mb-2" href="https://github.com/andrewstlz/hugo-mock-landing-page" role="button">View Source</a>
+      <p class="text-muted mb-0">MIT Licensed</p>
     </div>
+  </div>
+</section>
 
-    <div class="row text-center mt-5">
-      <div class="col-lg-4">
-        <h2>Learn New Techniques</h2>
-        <p>Learn new memorization techniques such as the <a href="https://artofmemory.com/blog/method-of-loci/" target="_blank">method of loci</a>.</p>
-      </div>
-      <div class="col-lg-4">
-        <h2>Get Daily Tips</h2>
-        <p>Receive a daily memory tip customized for you to improve your cognitive health.</p>
-      </div>
-      <div class="col-lg-4">
-        <h2>Compete Daily Challenges</h2>
-        <p>Work on daily mini challenges that can help you make progress, one small step at a time.</p>
-      </div>
-    </div>
-  </section>
+<section class="section container my-3">
+  {{ partial "features.html" . }}
+</section>
 
-</body>
-</html>
+<section class="section container my-3">
+  <h3 class="text-secondary text-center my-5">Latest Posts</h3>
+  {{ partial "latest-posts.html" . }}
+</section>
+
+<section class="section container my-3">
+  <h3 class="text-secondary text-center my-5">Featured Pages</h3>
+  {{ partial "featured-pages.html" . }}
+</section>
+
+{{ end }}
