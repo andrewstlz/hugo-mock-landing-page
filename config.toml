@@ -1,4 +1,4 @@
-baseURL = 'https://andrewstlz.github.io/hugo-mock-landing-page/'
+baseURL = "https://andrewstlz.github.io/hugo-mock-landing-page/"
 title = "Mem&M"
 author = "Andrew S Wong"
 copyright = "Andrew S Wong"
