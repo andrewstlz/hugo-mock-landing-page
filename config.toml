@@ -1,5 +1,9 @@
 baseURL = "https://andrewstlz.github.io/hugo-mock-landing-page/"
 title = "Mem&M"
+theme = "hugo-bootstrap-theme"
+
+relativeURLs = true
+canonifyURLs = true
 author = "Andrew S Wong"
 copyright = "Andrew S Wong"
 
